@@ -1,5 +1,7 @@
  A simple perlin noise implementation in Rust
  
+ [![Build Status](https://travis-ci.org/Lapz/perlin_noise.svg?branch=master)](https://travis-ci.org/Lapz/perlin_noise)
+ 
  # Example
  ```rust 
  extern crate perlin_noise as perlin;
