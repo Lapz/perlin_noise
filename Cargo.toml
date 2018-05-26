@@ -1,6 +1,6 @@
 [package]
 name = "perlin_noise"
-version = "1.0.0"
+version = "1.0.1"
 authors = ["Lenard Pratt <striderman34@gmail.com>"]
 keywords = ["noise","perlin","random"]
 license = "MIT"
