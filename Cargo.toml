@@ -2,6 +2,9 @@
 name = "perlin_noise"
 version = "1.0.0"
 authors = ["Lenard Pratt <striderman34@gmail.com>"]
+keywords = ["noise","perlin","random"]
+license = "MIT"
+repository = "https://github.com/Lapz/perlin_noise"
 
 [dependencies]
-rand ="0.5.0"
+rand ="0.5.0" 
