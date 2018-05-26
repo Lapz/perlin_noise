@@ -13,17 +13,7 @@ rust:
 matrix:
   allow_failures:
     - rust: nightly
-  include:
-  - env: GHP_UPLOAD_VERSION=0.3.2
-    script:
-    - cargo doc --verbose && cargo ghp-upload -vv
-before_script: ((cargo install cargo-travis && cargo install --version $GHP_UPLOAD_VERSION cargo-ghp-upload) || true)
 script:
-- cargo clean
-- cargo build 
-- cargo test --features=all -- --nocapture
-after_success: |
- if [[ "$TRAVIS_RUST_VERSION" == stable ]]; then
-    bash <(curl https://raw.githubusercontent.com/xd009642/tarpaulin/master/travis-install.sh)
-    cargo tarpaulin --ciserver travis-ci --coveralls $TRAVIS_JOB_ID
-  fi
+  - cargo clean
+  - cargo build 
+  - cargo test
