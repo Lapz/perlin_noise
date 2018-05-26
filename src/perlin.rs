@@ -165,8 +165,7 @@ impl PerlinNoise {
         let x0 = x.floor() as usize;
 
         x -= x.floor();
-
-        x = fade(x);
+        
         let fx = (3.0 - 2.0 * x) * x * x;
         lerp(
             fx,
@@ -221,6 +220,3 @@ fn lerp(t: f64, a: f64, b: f64) -> f64 {
 // Fade function as defined by Ken Perlin.  This eases coordinate values
 // so that they will "ease" towards integral values.  This ends up smoothing
 // the final output.
-fn fade(t: f64) -> f64 {
-    t * t * t * (t * (t * 6.0 - 15.0) + 10.0)
-}
