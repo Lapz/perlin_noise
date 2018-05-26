@@ -84,9 +84,9 @@ impl PerlinNoise {
     }
 
     fn noise3d(&self, mut x: f64, mut y: f64, mut z: f64) -> f64 {
-        let x0 = x.floor() as usize;
-        let y0 = y.floor() as usize;
-        let z0 = z.floor() as usize;
+        let x0 = (x.floor() as usize) & 255;
+        let y0 = (y.floor() as usize) & 255;
+        let z0 = (z.floor() as usize) & 255;
 
         x -= x.floor();
         y -= y.floor();
@@ -135,8 +135,8 @@ impl PerlinNoise {
     }
 
     fn noise2d(&self, mut x: f64, mut y: f64) -> f64 {
-        let x0 = x.floor() as usize;
-        let y0 = y.floor() as usize;
+        let x0 = (x.floor() as usize) & 255;
+        let y0 = (y.floor() as usize) & 255;
 
         x -= x.floor();
         y -= y.floor();
@@ -162,10 +162,10 @@ impl PerlinNoise {
     }
 
     fn noise1d(&self, mut x: f64) -> f64 {
-        let x0 = x.floor() as usize;
+        let x0 = (x.floor() as usize) & 255;
 
         x -= x.floor();
-        
+
         let fx = (3.0 - 2.0 * x) * x * x;
         lerp(
             fx,
